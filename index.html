@@ -51,9 +51,9 @@
     </div>
     <div>
         <div class="colour-name">
-            Red <input id="input" type="number" placeholder="Enter your number">
-            Green <input id="input" type="number" placeholder="Enter your number">
-            Blue <input id="input" type="number" placeholder="Enter your number">
+            Red <input id="inputa" value="1" type="number" placeholder="Enter your number">
+            Green <input id="inputb" value="1" type="number" placeholder="Enter your number">
+            Blue <input id="inputc" value="1" type="number" placeholder="Enter your number">
         </div>
         <form>
             Number of Circle <input id="input1" type="number" min="0" max="10" placeholder="Enter your number">
@@ -94,17 +94,21 @@
                 document.getElementById("result2").innerHTML += '<i style="color: blue" class="fa-solid fa-circle"></i>\n'.repeat(a);
             }
         };
+
+
         function start() {
-            
+            var t1 = +document.getElementById("inputa").value;
+            var t2 = +document.getElementById("inputb").value;
+            var t3 = +document.getElementById("inputc").value;
         setTimeout(function() {
             document.getElementById("result").style.display = 'none';
-        }, 500)
+        }, t1*1000)
         setTimeout(function() {
             document.getElementById("result1").style.display = 'none';
-        }, 800)
+        }, t2*1000)
         setTimeout(function() {
             document.getElementById("result2").style.display = 'none';
-        }, 1100)
+        }, t3*1000)
     };
     </script>
 </body>
