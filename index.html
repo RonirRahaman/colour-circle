@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>JS Assigment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            justify-content: left;
+            text-align: center;
+            background: rgb(139, 153, 153);
+        }
+
+        body h1,
+        input {
+            padding: 10px;
+        }
+
+        #result,
+        #result1,
+        #result2 {
+            font: large bold;
+            line-height: 1.8;
+            color: rgb(49, 21, 21);
+            margin: 15px;
+            letter-spacing: 3px;
+        }
+
+        .colour-name {
+            padding-top: 19px;
+            padding-bottom: 10vh;
+        }
+
+        #input1 {
+            padding-inline: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 style="font-weight: 700;">Find your next 3 numbers:</h1>
+    </div>
+    <div>
+        <div class="colour-name">
+            Red <input id="input" type="number" placeholder="Enter your number">
+            Green <input id="input" type="number" placeholder="Enter your number">
+            Blue <input id="input" type="number" placeholder="Enter your number">
+        </div>
+        <form>
+            Number of Circle <input id="input1" type="number" min="0" max="10" placeholder="Enter your number">
+            <button type="button" id="button" onclick="add()"
+                style="background: rgb(113, 189, 132); cursor: pointer; padding: 10px;">Enter</button>
+        </form>
+    </div>
+    <div class="contain">
+        <p id="result"> </p>
+        <p id="result1"> </p>
+        <p id="result2"> </p>
+    </div>
+    <div class="end">
+        <button type="button" id="button" onclick="start()"
+            style="background: rgb(113, 189, 132); cursor: pointer; padding: 10px;">Start</button>
+        <button type="button" id="button" onClick="window.location.reload();"
+            style="background: rgb(113, 189, 132); cursor: pointer; padding: 10px;">Reset</button>
+    </div>
+
+    <script>
+        function add() {
+            var a = document.getElementById("input1").value;
+            var ans = new Array();
+
+            if (a < 0) {
+                document.getElementById("result").innerHTML = "please enter a positive value 0 to 10";
+                document.getElementById("result1").innerHTML = "please enter a positive value 0 to 10";
+                document.getElementById("result2").innerHTML = "please enter a positive value 0 to 10";
+            }
+            if (a > 10) {
+                document.getElementById("result").innerHTML = "please enter a value between 0 to 10";
+                document.getElementById("result1").innerHTML = "please enter a value between 0 to 10";
+                document.getElementById("result2").innerHTML = "please enter a value between 0 to 10";
+            }
+            else {
+                document.getElementById("result").innerHTML += '<i style="color: red" class="fa-solid fa-circle"></i>\n'.repeat(a);
+                document.getElementById("result1").innerHTML += '<i style="color: green" class="fa-solid fa-circle"></i>\n'.repeat(a);
+                document.getElementById("result2").innerHTML += '<i style="color: blue" class="fa-solid fa-circle"></i>\n'.repeat(a);
+            }
+        };
+        function start() {
+            
+        setTimeout(function() {
+            document.getElementById("result").style.display = 'none';
+        }, 500)
+        setTimeout(function() {
+            document.getElementById("result1").style.display = 'none';
+        }, 800)
+        setTimeout(function() {
+            document.getElementById("result2").style.display = 'none';
+        }, 1100)
+    };
+    </script>
+</body>
+
+</html>
